@@ -1,0 +1,454 @@
+/* =========================
+   RESET
+========================= */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* =========================
+   BODY
+========================= */
+
+body {
+    background-color: #3b1c08;
+    color: white;
+    font-family: Arial, sans-serif;
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   HALAMAN ORGANIGRAM
+========================= */
+
+.organigram {
+    width: 100%;
+    max-width: 1200px;
+    margin: auto;
+    padding: 50px 30px 80px;
+}
+
+
+/* =========================
+   HEADER
+========================= */
+
+.header-organigram {
+    text-align: center;
+    margin-bottom: 70px;
+}
+
+.header-organigram h1 {
+    font-family: Georgia, serif;
+    font-size: 38px;
+    letter-spacing: 3px;
+    margin-bottom: 8px;
+}
+
+.header-organigram h2 {
+    font-family: Georgia, serif;
+    font-size: 32px;
+    letter-spacing: 2px;
+    margin-bottom: 8px;
+}
+
+.header-organigram > p {
+    font-size: 16px;
+    font-style: italic;
+    margin-bottom: 30px;
+}
+
+
+/* =========================
+   FOTO UTAMA
+========================= */
+
+.foto-organigram {
+    display: block;
+    width: 100%;
+    max-width: 900px;
+    height: 380px;
+    object-fit: cover;
+    margin: auto;
+    border-radius: 25px;
+}
+
+.deskripsi-header {
+    max-width: 700px;
+    margin: 25px auto 0;
+    line-height: 1.6;
+    font-size: 15px;
+}
+
+
+/* =========================
+   BAGIAN
+========================= */
+
+.bagian {
+    margin-bottom: 80px;
+}
+
+
+/* =========================
+   JUDUL BAGIAN
+========================= */
+
+.judul-bagian {
+    width: fit-content;
+    min-width: 190px;
+    text-align: center;
+    margin: 0 auto 35px;
+    padding: 12px 30px;
+    background-color: white;
+    color: #08783f;
+    border: 2px solid #08783f;
+    border-radius: 30px;
+    font-size: 18px;
+}
+
+
+/* =========================
+   CARD PEMBINA
+========================= */
+
+.card-pembina {
+    width: 300px;
+    background-color: white;
+    color: #222;
+    margin: auto;
+    padding: 30px 20px;
+    border-radius: 25px;
+    text-align: center;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-pembina img {
+    width: 130px;
+    height: 130px;
+    object-fit: cover;
+    border-radius: 50%;
+    border: 5px solid #08783f;
+    margin-bottom: 15px;
+}
+
+.card-pembina h4 {
+    font-size: 18px;
+    margin-bottom: 8px;
+}
+
+.card-pembina p {
+    color: #666;
+    font-size: 14px;
+}
+
+
+/* =========================
+   PELATIH
+========================= */
+
+.pelatih-container {
+    display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 20px;
+}
+
+.card-pelatih {
+    background-color: white;
+    color: #222;
+    min-height: 230px;
+    padding: 25px 15px;
+    border-radius: 22px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 8px 18px rgba(0, 0, 0, 0.25);
+}
+
+.card-pelatih img,
+.foto-kosong {
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    margin-bottom: 15px;
+}
+
+.card-pelatih img {
+    object-fit: cover;
+    border: 4px solid #08783f;
+}
+
+.foto-kosong {
+    background-color: #ddd;
+    color: #777;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+}
+
+.card-pelatih h4 {
+    color: #08783f;
+    font-size: 15px;
+    margin-bottom: 7px;
+}
+
+.card-pelatih p {
+    color: #555;
+    font-size: 14px;
+}
+
+
+/* =========================
+   CARD BIDANG
+========================= */
+
+.bidang-container {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+}
+
+.card-bidang {
+    background-color: white;
+    color: #222;
+    padding: 25px;
+    border-radius: 25px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+}
+
+.card-bidang h4 {
+    text-align: center;
+    font-family: Georgia, serif;
+    font-size: 18px;
+    color: #08783f;
+    margin-bottom: 18px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ddd;
+}
+
+
+/* =========================
+   ISI KEPENGURUSAN
+========================= */
+
+.isi-bidang {
+    background-color: #08783f;
+    color: white;
+    padding: 20px;
+
+    /* Tinggi kotak tetap */
+    max-height: 300px;
+
+    /* Isi bisa di-scroll */
+    overflow-y: auto;
+
+    /* Mencegah scroll horizontal */
+    overflow-x: hidden;
+}
+
+
+/* =========================
+   TEXT ISI BIDANG
+========================= */
+
+.isi-bidang p {
+    font-size: 14px;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+.isi-bidang p:last-child {
+    margin-bottom: 0;
+}
+
+
+/* =========================
+   SCROLLBAR ISI BIDANG
+========================= */
+
+.isi-bidang::-webkit-scrollbar {
+    width: 7px;
+}
+
+.isi-bidang::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 10px;
+}
+
+.isi-bidang::-webkit-scrollbar-thumb {
+    background: rgba(255, 255, 255, 0.6);
+    border-radius: 10px;
+}
+
+.isi-bidang::-webkit-scrollbar-thumb:hover {
+    background: white;
+}
+
+
+/* =========================
+   TABLET
+========================= */
+
+@media (max-width: 1000px) {
+    .organigram {
+        padding: 40px 25px 70px;
+    }
+
+    .header-organigram h1 {
+        font-size: 32px;
+    }
+
+    .header-organigram h2 {
+        font-size: 27px;
+    }
+
+    .foto-organigram {
+        height: 320px;
+    }
+
+    .pelatih-container {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .bidang-container {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    /* Scroll tetap aktif di tablet */
+
+    .isi-bidang {
+        max-height: 300px;
+    }
+}
+
+
+/* =========================
+   HP
+========================= */
+
+@media (max-width: 600px) {
+    .organigram {
+        padding: 35px 18px 60px;
+    }
+
+    .header-organigram {
+        margin-bottom: 55px;
+    }
+
+    .header-organigram h1 {
+        font-size: 24px;
+        letter-spacing: 1px;
+    }
+
+    .header-organigram h2 {
+        font-size: 22px;
+    }
+
+    .header-organigram > p {
+        font-size: 13px;
+    }
+
+    .foto-organigram {
+        height: 230px;
+        border-radius: 18px;
+    }
+
+    .deskripsi-header {
+        font-size: 13px;
+        line-height: 1.5;
+    }
+
+    .bagian {
+        margin-bottom: 60px;
+    }
+
+    .judul-bagian {
+        font-size: 16px;
+        min-width: 170px;
+        padding: 10px 20px;
+        margin-bottom: 25px;
+    }
+
+
+    /* =========================
+       PEMBINA
+    ========================= */
+
+    .card-pembina {
+        width: 90%;
+        max-width: 300px;
+    }
+
+    .card-pembina img {
+        width: 110px;
+        height: 110px;
+    }
+
+
+    /* =========================
+       PELATIH
+    ========================= */
+
+    .pelatih-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    .card-pelatih {
+        min-height: 210px;
+        padding: 20px 10px;
+    }
+
+    .card-pelatih img,
+    .foto-kosong {
+        width: 80px;
+        height: 80px;
+    }
+
+    .card-pelatih h4 {
+        font-size: 13px;
+    }
+
+    .card-pelatih p {
+        font-size: 12px;
+    }
+
+
+    /* =========================
+       BIDANG
+    ========================= */
+
+    .bidang-container {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+
+    .card-bidang {
+        padding: 20px;
+    }
+
+    .card-bidang h4 {
+        font-size: 17px;
+    }
+
+    .isi-bidang {
+        padding: 18px;
+
+        /* Tetap berbentuk kotak */
+        max-height: 300px;
+        overflow-y: auto;
+        overflow-x: hidden;
+    }
+
+    .isi-bidang p {
+        font-size: 13px;
+    }
+}

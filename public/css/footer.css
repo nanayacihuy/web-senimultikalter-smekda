@@ -1,0 +1,157 @@
+/* =====================================================
+   FOOTER
+===================================================== */
+.footer {
+    width: 100%;
+    background: #ffffff;
+    color: #4a1800;
+    padding: 18px 35px;
+}
+.footer-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns:
+        1.2fr
+        1.5fr
+        0.7fr;
+    align-items: center;
+    gap: 30px;
+}
+/* =====================================================
+   BRAND
+===================================================== */
+.footer-brand {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.footer-brand img {
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    object-fit: contain;
+}
+.footer-brand h3 {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.footer-brand p {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+}
+/* =====================================================
+   ALAMAT
+===================================================== */
+.footer-address h3 {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-bottom: 5px;
+}
+.footer-address p {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    line-height: 1.5;
+    font-weight: 600;
+}
+/* =====================================================
+   SOCIAL MEDIA
+===================================================== */
+.footer-social h3 {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    margin-bottom: 8px;
+}
+.social-icons {
+    display: flex;
+    align-items: center;
+    gap: 18px;
+}
+.social-icons a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    color: #4a1800;
+    text-decoration: none;
+    font-size: 20px;
+    transition:
+        transform 0.3s ease,
+        background 0.3s ease,
+        color 0.3s ease;
+}
+.social-icons a:hover {
+    transform: translateY(-4px);
+    background: #087744;
+    color: white;
+}
+/* =====================================================
+   BACK TO TOP
+===================================================== */
+.back-to-top {
+    position: fixed;
+    right: 25px;
+    bottom: 25px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    border-radius: 50%;
+    background: #087744;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transform: translateY(20px);
+    transition:
+        opacity 0.3s ease,
+        visibility 0.3s ease,
+        transform 0.3s ease,
+        background 0.3s ease;
+}
+.back-to-top.show {
+    opacity: 1;
+    visibility: visible;
+    transform: translateY(0);
+}
+.back-to-top:hover {
+    background: #065c34;
+    transform: translateY(-4px);
+}
+/* =====================================================
+   RESPONSIVE
+===================================================== */
+@media (max-width: 800px) {
+    .footer-container {
+        grid-template-columns: 1fr 1fr;
+        gap: 25px;
+    }
+    .footer-social {
+        grid-column: 1 / -1;
+    }
+}
+@media (max-width: 600px) {
+    .footer {
+        padding: 25px 20px;
+    }
+    .footer-container {
+        grid-template-columns: 1fr;
+        gap: 22px;
+    }
+    .footer-social {
+        grid-column: auto;
+    }
+    .footer-brand img {
+        width: 40px;
+        height: 40px;
+    }
+    .back-to-top {
+        right: 18px;
+        bottom: 18px;
+        width: 40px;
+        height: 40px;
+    }
+}

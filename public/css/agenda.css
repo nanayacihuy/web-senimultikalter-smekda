@@ -1,0 +1,808 @@
+/* =====================================================
+   AGENDA SENI MULTIKALTER
+===================================================== */
+:root {
+    --brown: #481d08;
+    --brown-dark: #321204;
+    --brown-light: #612b0e;
+    --green: #087849;
+    --green-light: #0b8a55;
+    --white: #ffffff;
+    --cream: #f7f3ed;
+    --gray: #d9d9d9;
+    --text: #321609;
+    --gold: #c9a467;
+}
+
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    margin: 0;
+    font-family: "DM Sans", sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+button,
+a {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.agenda-page {
+    background: var(--brown);
+    min-height: 100vh;
+    padding-bottom: 80px;
+}
+
+
+/* =====================================================
+   HERO
+===================================================== */
+
+.agenda-hero {
+    position: relative;
+    width: min(1100px, 94%);
+    min-height: 430px;
+    margin: 0 auto;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    background-color: var(--brown-dark);
+    background-image: url("../img/agenda/hero-agenda.jpg");
+    background-size: cover;
+    background-position: center;
+}
+
+.hero-overlay {
+    position: absolute;
+    inset: 0;
+    background:
+        linear-gradient(
+            90deg,
+            rgba(48, 16, 4, 0.94),
+            rgba(48, 16, 4, 0.68),
+            rgba(48, 16, 4, 0.15)
+        );
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    width: 55%;
+    padding: 50px 60px;
+    color: white;
+}
+
+.hero-small-title {
+    display: block;
+    margin-bottom: 12px;
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    font-weight: 700;
+    letter-spacing: 0.8px;
+}
+
+.hero-content h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(24px, 4vw, 38px);
+    line-height: 1.25;
+    color: white;
+}
+
+.hero-content h1::first-line {
+    color: white;
+}
+
+.hero-content p {
+    margin-top: 16px;
+    max-width: 500px;
+    font-family: "Playfair Display", serif;
+    font-size: 13px;
+    font-style: italic;
+    line-height: 1.6;
+    color: rgba(255, 255, 255, 0.8);
+}
+
+.hero-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 25px;
+    padding: 11px 18px;
+    border-radius: 5px;
+    background: white;
+    color: var(--green);
+    font-size: 11px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.hero-button span {
+    font-size: 15px;
+}
+
+.hero-button:hover {
+    background: var(--green);
+    color: white;
+    transform: translateY(-3px);
+}
+
+
+/* =====================================================
+   HEADING
+===================================================== */
+
+.agenda-heading {
+    width: min(1000px, 90%);
+    margin: 70px auto 35px;
+    color: white;
+}
+
+.agenda-heading span {
+    display: inline-block;
+    padding: 6px 14px;
+    border-radius: 20px;
+    background: white;
+    color: var(--green);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.agenda-heading h2 {
+    margin-top: 13px;
+    font-family: "Playfair Display", serif;
+    font-size: clamp(23px, 4vw, 32px);
+}
+
+.agenda-heading p {
+    margin-top: 5px;
+    font-family: "Playfair Display", serif;
+    font-size: 12px;
+    font-style: italic;
+    color: rgba(255, 255, 255, 0.7);
+}
+
+
+/* =====================================================
+   AGENDA LIST
+===================================================== */
+
+.agenda-list {
+    width: min(1000px, 90%);
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+
+/* =====================================================
+   CARD
+===================================================== */
+
+.agenda-card {
+    display: grid;
+    grid-template-columns: 30% 70%;
+    min-height: 190px;
+    background: var(--white);
+    border-radius: 12px;
+    overflow: hidden;
+    cursor: pointer;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+    transition:
+        transform 0.35s ease,
+        box-shadow 0.35s ease;
+}
+
+.agenda-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 18px 35px rgba(0, 0, 0, 0.25);
+}
+
+
+/* =====================================================
+   PHOTO
+===================================================== */
+
+.agenda-photo {
+    position: relative;
+    min-height: 190px;
+    background: var(--gray);
+    overflow: hidden;
+}
+
+.agenda-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+}
+
+.agenda-card:hover .agenda-photo img {
+    transform: scale(1.08);
+}
+
+.photo-number {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.9);
+    color: var(--green);
+    font-size: 9px;
+    font-weight: 700;
+}
+
+
+/* =====================================================
+   INFO
+===================================================== */
+
+.agenda-info {
+    display: grid;
+    grid-template-columns: 45px 90px 1fr auto;
+    align-items: center;
+    gap: 15px;
+    padding: 25px;
+}
+
+
+/* =====================================================
+   CALENDAR
+===================================================== */
+
+.calendar-icon {
+    position: relative;
+    width: 34px;
+    height: 31px;
+    border: 3px solid var(--green);
+    border-radius: 5px;
+}
+
+.calendar-icon::before {
+    content: "";
+    position: absolute;
+    left: -3px;
+    right: -3px;
+    top: 7px;
+    border-top: 3px solid var(--green);
+}
+
+.calendar-icon::after {
+    content: "";
+    position: absolute;
+    top: -8px;
+    left: 6px;
+    width: 3px;
+    height: 9px;
+    background: var(--green);
+    box-shadow: 14px 0 var(--green);
+}
+
+
+/* =====================================================
+   DATE
+===================================================== */
+
+.agenda-date {
+    display: flex;
+    align-items: center;
+    gap: 7px;
+    color: var(--brown);
+}
+
+.agenda-date strong {
+    font-family: "Playfair Display", serif;
+    font-size: 35px;
+    line-height: 1;
+}
+
+.agenda-date span {
+    font-family: "Playfair Display", serif;
+    font-size: 9px;
+    font-weight: 600;
+}
+
+
+/* =====================================================
+   DETAIL
+===================================================== */
+
+.agenda-detail h3 {
+    font-family: "Playfair Display", serif;
+    font-size: 16px;
+    color: var(--green);
+}
+
+.agenda-detail h3 small {
+    display: block;
+    margin-top: 2px;
+    color: var(--brown);
+    font-size: 11px;
+    font-weight: 600;
+}
+
+.agenda-detail p {
+    margin-top: 9px;
+    color: #777;
+    font-size: 10px;
+}
+
+.agenda-detail p span {
+    color: var(--green);
+    font-size: 14px;
+}
+
+
+/* =====================================================
+   DETAIL BUTTON
+===================================================== */
+
+.detail-button {
+    border: none;
+    padding: 9px 15px;
+    border-radius: 5px;
+    background: var(--green);
+    color: white;
+    font-size: 9px;
+    font-weight: 700;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.detail-button:hover {
+    background: var(--brown);
+    transform: translateX(3px);
+}
+
+
+/* =====================================================
+   CTA
+===================================================== */
+
+.agenda-cta {
+    width: min(1000px, 90%);
+    margin: 70px auto 0;
+    padding: 35px 40px;
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    color: white;
+}
+
+.agenda-cta span {
+    color: var(--green-light);
+    font-size: 9px;
+    font-weight: 700;
+    letter-spacing: 1px;
+}
+
+.agenda-cta h2 {
+    margin-top: 7px;
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+}
+
+.cta-button {
+    padding: 12px 18px;
+    border-radius: 5px;
+    background: white;
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 700;
+    transition: 0.3s ease;
+}
+
+.cta-button:hover {
+    background: var(--green);
+    color: white;
+}
+
+
+/* =====================================================
+   MODAL
+===================================================== */
+
+.agenda-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    background: rgba(35, 10, 2, 0.9);
+    backdrop-filter: blur(8px);
+    opacity: 0;
+    visibility: hidden;
+    transition: 0.3s ease;
+}
+
+.agenda-modal.active {
+    opacity: 1;
+    visibility: visible;
+}
+
+.modal-box {
+    position: relative;
+    width: min(700px, 95%);
+    max-height: 90vh;
+    overflow: auto;
+    border-radius: 12px;
+    background: white;
+    transform: scale(0.9) translateY(20px);
+    transition: 0.35s ease;
+}
+
+.agenda-modal.active .modal-box {
+    transform: scale(1) translateY(0);
+}
+
+
+/* =====================================================
+   MODAL IMAGE
+===================================================== */
+
+.modal-image {
+    width: 100%;
+    height: 280px;
+    background: var(--gray);
+}
+
+.modal-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+
+/* =====================================================
+   MODAL BODY
+===================================================== */
+
+.modal-body {
+    padding: 25px;
+}
+
+.modal-date {
+    color: var(--green);
+    font-size: 10px;
+    font-weight: 700;
+}
+
+.modal-body h2 {
+    margin: 7px 0;
+    font-family: "Playfair Display", serif;
+    font-size: 25px;
+    color: var(--brown);
+}
+
+.modal-body > p {
+    color: #777;
+    font-size: 12px;
+    line-height: 1.7;
+}
+
+.modal-line {
+    width: 50px;
+    margin: 17px 0;
+    border-top: 3px solid var(--green);
+}
+
+.modal-ok {
+    margin-top: 20px;
+    padding: 9px 18px;
+    border: none;
+    border-radius: 5px;
+    background: var(--green);
+    color: white;
+    font-size: 10px;
+    cursor: pointer;
+}
+
+
+/* =====================================================
+   CLOSE
+===================================================== */
+
+.modal-close {
+    position: absolute;
+    z-index: 3;
+    top: 12px;
+    right: 12px;
+    width: 35px;
+    height: 35px;
+    border: none;
+    border-radius: 50%;
+    background: white;
+    color: var(--brown);
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 3px 12px rgba(0, 0, 0, 0.25);
+    transition: 0.3s ease;
+}
+
+.modal-close:hover {
+    background: var(--green);
+    color: white;
+    transform: rotate(90deg);
+}
+
+
+/* =====================================================
+   SCROLL REVEAL
+===================================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(30px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 850px) {
+
+    .agenda-hero {
+        min-height: 390px;
+    }
+
+    .hero-content {
+        width: 70%;
+        padding: 40px;
+    }
+
+    .agenda-card {
+        grid-template-columns: 35% 65%;
+    }
+
+    .agenda-info {
+        grid-template-columns: 40px 80px 1fr;
+        padding: 20px;
+    }
+
+    .detail-button {
+        grid-column: 3;
+        justify-self: start;
+        margin-top: 5px;
+    }
+
+    .agenda-cta {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 20px;
+    }
+}
+
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 600px) {
+
+    .agenda-page {
+        padding-bottom: 50px;
+    }
+
+    .agenda-hero {
+        width: 94%;
+        min-height: 430px;
+        align-items: flex-end;
+        background-position: center;
+    }
+
+    .hero-overlay {
+        background:
+            linear-gradient(
+                0deg,
+                rgba(48, 16, 4, 0.95),
+                rgba(48, 16, 4, 0.45),
+                rgba(48, 16, 4, 0.15)
+            );
+    }
+
+    .hero-content {
+        width: 100%;
+        padding: 25px;
+    }
+
+    .hero-small-title {
+        font-size: 13px;
+    }
+
+    .hero-content h1 {
+        font-size: 23px;
+    }
+
+    .hero-content p {
+        font-size: 10px;
+    }
+
+    .hero-button {
+        font-size: 9px;
+    }
+
+    .agenda-heading {
+        margin-top: 45px;
+    }
+
+    .agenda-heading h2 {
+        font-size: 23px;
+    }
+
+    .agenda-list {
+        width: 92%;
+    }
+
+    .agenda-card {
+        display: block;
+    }
+
+    .agenda-photo {
+        height: 190px;
+        min-height: 190px;
+    }
+
+    .agenda-info {
+        display: grid;
+        grid-template-columns: 35px 1fr;
+        gap: 12px;
+        padding: 18px;
+    }
+
+    .calendar-icon {
+        grid-row: span 2;
+        align-self: start;
+    }
+
+    .agenda-date {
+        grid-column: 2;
+    }
+
+    .agenda-detail {
+        grid-column: 2;
+    }
+
+    .agenda-detail h3 {
+        font-size: 15px;
+    }
+
+    .agenda-detail p {
+        font-size: 9px;
+    }
+
+    .detail-button {
+        grid-column: 2;
+        width: fit-content;
+    }
+
+    .agenda-cta {
+        width: 92%;
+        padding: 25px;
+    }
+
+    .agenda-cta h2 {
+        font-size: 21px;
+    }
+
+    .cta-button {
+        font-size: 9px;
+    }
+
+    .modal-image {
+        height: 200px;
+    }
+
+    .modal-body {
+        padding: 20px;
+    }
+
+    .modal-body h2 {
+        font-size: 21px;
+    }
+}
+
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 380px) {
+
+    .hero-content {
+        padding: 20px;
+    }
+
+    .hero-content h1 {
+        font-size: 20px;
+    }
+
+    .agenda-photo {
+        height: 160px;
+        min-height: 160px;
+    }
+
+    .agenda-info {
+        padding: 15px;
+    }
+}
+
+
+/* =====================================================
+   TEXT BUTTON
+===================================================== */
+
+.text-button {
+    display: inline-flex;
+    align-items: center;
+    gap: 10px;
+    padding: 12px 22px;
+    background-color: #08783f;
+    color: white;
+    text-decoration: none;
+    border-radius: 25px;
+    font-size: 14px;
+    font-weight: 600;
+    transition: 0.3s ease;
+}
+
+.text-button span {
+    font-size: 18px;
+    transition: 0.3s ease;
+}
+
+.text-button:hover {
+    background-color: #055b30;
+    transform: translateY(-2px);
+}
+
+.text-button:hover span {
+    transform: translateX(5px);
+}

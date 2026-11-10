@@ -1,0 +1,23 @@
+[x-cloak] { 
+    display: none !important; 
+}
+
+/* Transisi Sudut Main Panel */
+main {
+    border-top-left-radius: 2rem;
+}
+
+/* Custom Horizontal Scrollbar untuk Tabel Media Kecil */
+.overflow-x-auto::-webkit-scrollbar {
+    height: 6px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+    background: #9E6B6B;
+    border-radius: 4px;
+}

@@ -1,0 +1,164 @@
+/* ==================================================
+   SIDEBAR
+================================================== */
+
+.sidebar {
+    width: 200px;
+    height: calc(100vh - 93px);
+
+    position: fixed;
+    top: 93px;
+    left: 0;
+
+    background: #0b7141;
+
+    z-index: 999;
+
+    display: flex;
+    flex-direction: column;
+
+    transition: transform 0.3s ease;
+}
+
+
+/* ==================================================
+   SIDEBAR MENU
+================================================== */
+
+.sidebar-menu {
+    width: 100%;
+    padding-top: 20px;
+}
+
+
+/* ==================================================
+   MENU ITEM
+================================================== */
+
+.menu-item {
+    width: 100%;
+    min-height: 52px;
+
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: white;
+
+    text-decoration: none;
+
+    transition: 0.2s ease;
+}
+
+
+/* Hover */
+
+.menu-item:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* Active */
+
+.menu-item.active {
+    background: #cbb4b4;
+    color: #560101;
+}
+
+
+/* ==================================================
+   ICON
+================================================== */
+
+.menu-icon {
+    width: 24px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    font-size: 19px;
+
+    flex-shrink: 0;
+}
+
+
+/* ==================================================
+   TEXT
+================================================== */
+
+.menu-text {
+    flex: 1;
+
+    font-size: 14px;
+}
+
+
+/* ==================================================
+   ARROW
+================================================== */
+
+.menu-arrow {
+    font-size: 22px;
+}
+
+
+/* ==================================================
+   LOGIN USER
+================================================== */
+
+.login-user {
+    margin-top: auto;
+
+    min-height: 55px;
+
+    padding: 0 18px;
+
+    display: flex;
+    align-items: center;
+
+    gap: 12px;
+
+    color: white;
+
+    text-decoration: none;
+
+    border-top: 1px solid rgba(255, 255, 255, 0.2);
+
+    transition: 0.2s ease;
+}
+
+
+.login-user:hover {
+    background: rgba(255, 255, 255, 0.15);
+}
+
+
+/* ==================================================
+   MOBILE
+================================================== */
+
+@media (max-width: 750px) {
+
+    .sidebar {
+        top: 75px;
+
+        width: 200px;
+
+        height: calc(100vh - 75px);
+
+        transform: translateX(-100%);
+
+        box-shadow:
+            5px 0 15px rgba(0, 0, 0, 0.2);
+    }
+
+
+    .sidebar.show {
+        transform: translateX(0);
+    }
+
+}

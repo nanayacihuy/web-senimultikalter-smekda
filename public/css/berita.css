@@ -1,0 +1,332 @@
+/* =====================================================
+   BERITA SENI MULTIKALTER
+===================================================== */
+
+:root {
+    --brown: #481d08;
+    --brown-dark: #351306;
+    --green: #087849;
+    --green-dark: #05633c;
+    --white: #ffffff;
+    --cream: #f7f2eb;
+    --gray: #d9d9d9;
+    --gold: #c8a363;
+    --text: #3d1b0b;
+}
+
+/* =====================================================
+   RESET
+===================================================== */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: "DM Sans", sans-serif;
+    background: var(--cream);
+    color: var(--text);
+    overflow-x: hidden;
+}
+
+img {
+    display: block;
+    width: 100%;
+}
+
+button {
+    font-family: inherit;
+}
+
+a {
+    text-decoration: none;
+}
+
+/* =====================================================
+   MAIN PAGE
+===================================================== */
+
+.berita-page {
+    min-height: 100vh;
+    background: var(--brown);
+    padding: 20px 0 70px;
+}
+
+.berita-container {
+    width: min(1000px, 92%);
+    margin: auto;
+}
+
+/* =====================================================
+   HEADER
+===================================================== */
+
+.berita-header {
+    text-align: center;
+    color: white;
+}
+
+.berita-header h1 {
+    font-family: "Playfair Display", serif;
+    font-size: clamp(25px, 4vw, 38px);
+    text-align: left;
+    line-height: 1;
+    margin: 0 0 10px;
+}
+
+.berita-header h1 span {
+    color: var(--green);
+}
+
+.header-image {
+    width: 100%;
+    height: 330px;
+    border-radius: 10px;
+    overflow: hidden;
+    background: var(--gray);
+}
+
+.header-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.7s ease;
+}
+
+.header-image:hover img {
+    transform: scale(1.03);
+}
+
+.header-caption {
+    margin-top: 10px;
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    font-style: italic;
+}
+
+.header-description {
+    max-width: 650px;
+    margin: 22px auto 0;
+    font-family: "Playfair Display", serif;
+    font-size: 15px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* =====================================================
+   FEATURED NEWS
+===================================================== */
+
+.featured-news {
+    margin-top: 70px;
+    position: relative;
+}
+
+.featured-card {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    gap: 30px;
+    cursor: pointer;
+}
+
+.featured-image {
+    width: 100%;
+    height: 250px;
+    background: var(--gray);
+    border-radius: 9px;
+    overflow: hidden;
+}
+
+.featured-image img {
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.6s ease;
+}
+
+.featured-card:hover .featured-image img {
+    transform: scale(1.06);
+}
+
+.featured-content {
+    color: white;
+}
+
+.featured-content h2 {
+    font-family: "Playfair Display", serif;
+    font-size: 18px;
+    line-height: 1.3;
+    margin-bottom: 12px;
+}
+
+.featured-content p {
+    font-family: "Playfair Display", serif;
+    font-size: 14px;
+    font-style: italic;
+    line-height: 1.5;
+}
+
+/* =====================================================
+   UPLOAD DATE
+===================================================== */
+
+.upload-date {
+    width: max-content;
+    margin: 70px 0 0 auto;
+    padding: 6px 13px;
+    background: white;
+    border-radius: 4px;
+    color: var(--text);
+    font-family: "Playfair Display", serif;
+    font-size: 9px;
+    font-style: italic;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.12);
+}
+
+.upload-date span {
+    color: var(--green);
+    font-weight: 700;
+}
+
+/* =====================================================
+   REVEAL ANIMATION
+===================================================== */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(25px);
+    transition:
+        opacity 0.7s ease,
+        transform 0.7s ease;
+}
+
+.reveal.show {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =====================================================
+   TABLET
+===================================================== */
+
+@media (max-width: 800px) {
+    .header-image {
+        height: 280px;
+    }
+
+    .featured-card {
+        grid-template-columns: 1fr;
+    }
+
+    .featured-image {
+        height: 270px;
+    }
+
+    .featured-content {
+        text-align: center;
+    }
+
+    .upload-date {
+        margin-top: 35px;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+/* =====================================================
+   MOBILE
+===================================================== */
+
+@media (max-width: 550px) {
+    .berita-page {
+        padding: 15px 0 50px;
+    }
+
+    .berita-container {
+        width: 90%;
+    }
+
+    .berita-header h1 {
+        font-size: 25px;
+    }
+
+    .header-image {
+        height: 210px;
+    }
+
+    .header-caption {
+        font-size: 11px;
+    }
+
+    .header-description {
+        font-size: 11px;
+        margin-top: 15px;
+    }
+
+    .featured-news {
+        margin-top: 45px;
+    }
+
+    .featured-image {
+        height: 190px;
+    }
+
+    .featured-content h2 {
+        font-size: 15px;
+    }
+
+    .featured-content p {
+        font-size: 11px;
+    }
+
+    .upload-date {
+        margin-top: 35px;
+        font-size: 8px;
+    }
+
+    .other-news {
+        margin-top: 60px;
+    }
+
+    .news-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .news-card-image {
+        height: 180px;
+    }
+
+    .modal-box > img {
+        height: 200px;
+    }
+
+    .modal-content h2 {
+        font-size: 20px;
+    }
+}
+
+/* =====================================================
+   SMALL MOBILE
+===================================================== */
+
+@media (max-width: 360px) {
+    .header-image {
+        height: 180px;
+    }
+
+    .featured-image {
+        height: 170px;
+    }
+
+    .header-description {
+        font-size: 10px;
+    }
+}

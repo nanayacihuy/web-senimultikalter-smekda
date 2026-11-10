@@ -1,0 +1,328 @@
+/* ================= VARIABEL WARNA (GANTI SESUAI LOGO) ================= */
+:root {
+    /* Warna utama untuk tombol, border focus, dan link */
+    --primary-color: #491600;       /* Contoh: Ungu/Aksen Seni (Ubah HEX ini sesuai logo) */
+    --primary-hover: #032802;       /* Warna tombol saat kursor menempel */
+    --primary-focus-rgba: rgba(139, 92, 246, 0.15); /* Ring highlight saat input fokus */
+    
+    /* Latar gradient panel sebelah kiri */
+    --bg-gradient-start: #211002;   /* Gelap berbisa/elegan */
+}
+
+/* ================= BASE STYLES ================= */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+}
+
+body {
+    background-color:#211002;;
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-page {
+    display: flex;
+    width: 100%;
+    max-width: 1000px;
+    min-height: 600px;
+    background: #ffffff;
+    border-radius: 16px;
+    box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05);
+    overflow: hidden;
+    margin: 20px;
+}
+
+/* ================= BAGIAN KIRI ================= */
+.login-left {
+    flex: 1;
+    background: linear-gradient(135deg, var(--bg-gradient-start), var(--bg-gradient-end));
+    color: #211002;;
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.left-content {
+    max-width: 360px;
+    text-align: center;
+}
+
+.logo-container img {
+    width: 90px;
+    height: 90px;
+    object-fit: cover;
+    border-radius: 50%;
+    margin-bottom: 20px;
+    border: 3px solid rgba(255, 255, 255, 0.2);
+}
+
+.login-left h1 {
+    font-size: 1.75rem;
+    font-weight: 700;
+    margin-bottom: 6px;
+}
+
+.tagline {
+    font-style: italic;
+    color: #032b02;
+    margin-bottom: 20px;
+}
+
+.left-description {
+    font-size: 0.9rem;
+    line-height: 1.6;
+    color: #032b02;
+}
+
+/* ================= BAGIAN KANAN ================= */
+.login-right {
+    flex: 1;
+    padding: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.login-card {
+    width: 100%;
+    max-width: 360px;
+}
+
+.card-header {
+    margin-bottom: 24px;
+}
+
+.card-header h3 {
+    font-size: 1.5rem;
+    font-weight: 600;
+}
+
+.login-subtitle {
+    font-size: 0.875rem;
+    color: #64748b;
+    margin-top: 4px;
+}
+
+.form-group {
+    margin-bottom: 18px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    margin-bottom: 6px;
+    color: #334155;
+}
+
+input[type="text"],
+input[type="password"],
+select {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #cbd5e1;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+input:focus, select:focus {
+    border-color: var(--primary-color);
+    box-shadow: 0 0 0 3px var(--primary-focus-rgba);
+}
+
+.password-box {
+    position: relative;
+    display: flex;
+    align-items: center;
+}
+
+.password-box button {
+    position: absolute;
+    right: 10px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
+    opacity: 0.6;
+}
+
+.login-button {
+    width: 100%;
+    padding: 12px;
+    background-color: var(--primary-color);
+    color: white;
+    border: none;
+    border-radius: 8px;
+    font-size: 0.95rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background-color 0.2s;
+    margin-top: 8px;
+}
+
+.login-button:hover {
+    background-color: var(--primary-hover);
+}
+
+.register-text {
+    margin-top: 20px;
+    text-align: center;
+    font-size: 0.875rem;
+    color: #64748b;
+}
+
+.register-text a {
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.register-text a:hover {
+    text-decoration: underline;
+}
+
+.alert {
+    padding: 10px 14px;
+    border-radius: 8px;
+    font-size: 0.85rem;
+    margin-bottom: 16px;
+}
+
+.alert-success { background: #dcfce7; color: #15803d; }
+.alert-danger { background: #fee2e2; color: #b91c1c; }
+
+/* ================= RESPONSIVE DESIGN ================= */
+
+/* Layar Tablet & Smartphone (<= 768px) */
+@media (max-width: 768px) {
+    body {
+        align-items: flex-start;
+        padding: 12px;
+    }
+
+    .login-page {
+        flex-direction: column;
+        min-height: auto;
+        margin: 0;
+        border-radius: 12px;
+    }
+
+    .login-left {
+        padding: 28px 20px 24px 20px;
+    }
+
+    .left-content {
+        max-width: 100%;
+    }
+
+    .logo-container img {
+        width: 70px;
+        height: 70px;
+        margin-bottom: 12px;
+    }
+
+    .login-left h1 {
+        font-size: 1.4rem;
+    }
+
+    .tagline {
+        font-size: 0.85rem;
+        margin-bottom: 12px;
+    }
+
+    .left-description {
+        font-size: 0.8rem;
+        line-height: 1.4;
+    }
+
+    .login-right {
+        padding: 28px 20px;
+    }
+}
+
+/* Layar HP Sangat Kecil (<= 380px) */
+@media (max-width: 380px) {
+    body {
+        padding: 6px;
+    }
+
+    .login-page {
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    }
+
+    .login-left {
+        padding: 20px 14px 16px 14px;
+    }
+
+    .logo-container img {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 8px;
+    }
+
+    .login-left h1 {
+        font-size: 1.2rem;
+    }
+
+    .tagline {
+        font-size: 0.8rem;
+        margin-bottom: 8px;
+    }
+
+    .left-description {
+        display: none;
+    }
+
+    .login-right {
+        padding: 20px 14px;
+    }
+
+    .card-header {
+        margin-bottom: 16px;
+    }
+
+    .card-header h3 {
+        font-size: 1.25rem;
+    }
+
+    .login-subtitle {
+        font-size: 0.8rem;
+    }
+
+    .form-group {
+        margin-bottom: 14px;
+    }
+
+    .form-group label {
+        font-size: 0.8rem;
+        margin-bottom: 4px;
+    }
+
+    input[type="text"],
+    input[type="password"],
+    select {
+        padding: 10px 12px;
+        font-size: 0.875rem;
+        border-radius: 6px;
+    }
+
+    .login-button {
+        padding: 11px;
+        font-size: 0.9rem;
+        border-radius: 6px;
+    }
+
+    .register-text {
+        font-size: 0.8rem;
+        margin-top: 16px;
+    }
+}

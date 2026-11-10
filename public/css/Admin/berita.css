@@ -1,0 +1,29 @@
+[x-cloak] { 
+    display: none !important; 
+}
+
+/* Custom Horizontal Scrollbar */
+.overflow-x-auto::-webkit-scrollbar {
+    height: 6px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-track {
+    background: #f1f1f1;
+    border-radius: 4px;
+}
+
+.overflow-x-auto::-webkit-scrollbar-thumb {
+    background: #9E6B6B;
+    border-radius: 4px;
+}
+#modalTambah {
+            display: none;
+        }
+
+        #modalTambah:checked ~ .modal-overlay {
+            display: flex;
+        }
+
+        .modal-overlay {
+            display: none;
+        }
